@@ -223,11 +223,29 @@
 			</dependency> 
 		<!-- ast end-->
 		
+		<!-- cas start -->
+		<dependency>
+		    <groupId>org.jasig.cas</groupId>
+		    <artifactId>cas-server-core</artifactId>
+		    <version>4.2.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.shiro</groupId>
+		    <artifactId>shiro-cas</artifactId>
+		    <version>1.2.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.shiro</groupId>
+		    <artifactId>shiro-spring</artifactId>
+		    <version>1.2.4</version>
+		</dependency>
 		<dependency>
 		    <groupId>org.jasig.cas.client</groupId>
 		    <artifactId>cas-client-core</artifactId>
 		    <version>3.4.1</version>
 		</dependency>
+		<!-- cas end -->
+		
 	</dependencies>
 	<build>
 		<plugins>
