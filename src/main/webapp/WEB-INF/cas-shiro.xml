@@ -11,19 +11,19 @@
 	<bean
     name="authenticationFilter"
     class="org.jasig.cas.client.authentication.AuthenticationFilter"
-    p:casServerLoginUrl="https://localhost/cas/login"
+    p:casServerLoginUrl="https://yexinzhou/cas/login"
     p:renew="false"
     p:gateway="false"
-    p:service="http://localhost:8084/sshe/secure/index.jsp" >
+    p:service="http://yexinzhou:8084/sshe/secure/index.jsp" >
     </bean>
  
  <bean
     name="ticketValidationFilter"
     class="org.jasig.cas.client.validation.Cas20ProxyReceivingTicketValidationFilter"
-    p:service="http://localhost:8084/sshe/secure/index.jsp">
+    p:service="http://yexinzhou:8084/sshe/secure/index.jsp">
     <property name="ticketValidator">
         <bean class="org.jasig.cas.client.validation.Cas20ServiceTicketValidator">
-            <constructor-arg index="0" value="https://localhost/cas" />
+            <constructor-arg index="0" value="https://yexinzhou/cas" />
         </bean>
     </property>
 </bean>
@@ -31,7 +31,7 @@
 <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">  
     <property name="securityManager" ref="securityManager"/>  
     <!-- 设定角色的登录链接，这里为cas登录页面的链接可配置回调地址  -->  
-    <property name="loginUrl" value="https://localhost/cas/login?service=http://localhost:8084/sshe/" />  
+    <property name="loginUrl" value="https://yexinzhou/cas/login?service=http://yexinzhou:8084/sshe/" />  
       
     <property name="filters">  
         <util:map>  
@@ -55,9 +55,9 @@
   
 <bean id="casRealm" class="org.apache.shiro.cas.CasRealm">  
     <property name="defaultRoles" value="ROLE_USER"/>       
-    <property name="casServerUrlPrefix" value="https://localhost/cas"/>  
+    <property name="casServerUrlPrefix" value="https://yexinzhou/cas"/>  
     <!-- 客户端的回调地址设置，必须和下面的shiro-cas过滤器拦截的地址一致 -->  
-    <property name="casService" value="http://localhost:8084/sshe/"/>  
+    <property name="casService" value="http://yexinzhou:8084/sshe"/>  
 </bean>  
   
 <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">      

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Site A</title>
+<title>Site B</title>
 </head>
 <body>
 <%="Hello"%>
