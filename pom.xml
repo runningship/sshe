@@ -87,12 +87,12 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${slf4j.version}</version>
-		</dependency>
+		</dependency>-->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>${slf4j.version}</version>
-		</dependency> -->
+			<version>1.7.5</version>
+		</dependency>
  
  
 		<!-- aspectjweaver.jar这是Spring AOP所要用到的包 -->
@@ -246,6 +246,29 @@
 		</dependency>
 		<!-- cas end -->
 		
+		<dependency>  
+		    <groupId>com.alibaba</groupId>  
+		    <artifactId>dubbo</artifactId>  
+		    <version>2.5.3</version>  
+		    <exclusions>  
+		      <exclusion>  
+		        <groupId>org.springframework</groupId>  
+		        <artifactId>spring</artifactId>  
+		      </exclusion>  
+		    </exclusions>  
+		  </dependency>
+		  
+<!-- 		  <dependency> -->
+<!-- 		    <groupId>org.apache.zookeeper</groupId> -->
+<!-- 		    <artifactId>zookeeper</artifactId> -->
+<!-- 		    <version>3.4.8</version> -->
+<!-- 		</dependency> -->
+		
+		<dependency>
+		    <groupId>com.101tec</groupId>
+		    <artifactId>zkclient</artifactId>
+		    <version>0.8</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
