@@ -19,17 +19,22 @@
             <util:map>  
                 <!-- 添加casFilter到shiroFilter -->  
                 <entry key="casFilter" value-ref="casFilter"/>  
+                <entry key="logout" value-ref="logout"/>
             </util:map>  
         </property>   
         <property name="filterChainDefinitions">  
             <value>
             	/shiro-cas = casFilter    
                 /secure/** = roles[ROLE_USER]  
+                /logout = logout
                 /** = anon  
             </value>  
         </property>  
     </bean>  
       
+    <bean id="logout" class="org.apache.shiro.web.filter.authc.LogoutFilter">
+		<property name="redirectUrl" value="https://yexinzhou/cas/logout?service=http://yexinzhou:8084/sshe/public/logoutSuccess.html" />
+	</bean>
     <bean id="casFilter" class="org.apache.shiro.cas.CasFilter">  
         <!-- 配置验证错误时的失败页面  -->  
         <property name="failureUrl" value="/error.jsp"/>  
@@ -44,7 +49,8 @@
       
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">      
         <property name="realm" ref="casRealm"/>
-        <property name="subjectFactory" ref="casSubjectFactory"/>  
+        <property name="subjectFactory" ref="casSubjectFactory"/>
+<!--         <property name="sessionManager" ref="sessionManager" />  -->
     </bean>  
       
     <!-- 如果要实现cas的remember me的功能，需要用到下面这个bean，并设置到securityManager的subjectFactory中 -->  
