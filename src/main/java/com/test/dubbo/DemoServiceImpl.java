@@ -2,6 +2,10 @@ package com.test.dubbo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
+import com.alibaba.fastjson.JSONObject;
+import com.test.ServiceManager;
 
 public class DemoServiceImpl implements IDemoService {
 
@@ -30,5 +34,11 @@ public class DemoServiceImpl implements IDemoService {
 		list.add(u2);
 		list.add(u3);
 		return list;
+	}
+
+	@Override
+	public Object call(String method , Map obj) {
+		Object result = ServiceManager.call(method, obj);
+		return result;
 	}
 }

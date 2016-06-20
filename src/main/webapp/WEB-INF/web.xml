@@ -20,7 +20,7 @@
 	<!--contextConfigLocation在 ContextLoaderListener类中的默认值是 /WEB-INF/applicationContext.xml -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/cas-shiro.xml,/WEB-INF/dubbo.xml</param-value>
+		<param-value>/WEB-INF/ApplicationContext.xml,/WEB-INF/cas-shiro.xml,/WEB-INF/dubbo.xml</param-value>
 	</context-param>
 	
 	<filter>  
